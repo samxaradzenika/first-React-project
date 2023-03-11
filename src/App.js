@@ -1,7 +1,7 @@
 import React from 'react';
 import ExpenseItem from './components/Expenses/ExpenseItem';
+import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses/Expenses';
-
 function App() {
    const expenses = [
       {
@@ -30,10 +30,16 @@ function App() {
       },
    ];
 
+   const addExpenseHandler = (expense) => {
+      console.log('In App.js');
+      console.log(expense);
+   };
+
    return (
       <div>
-         <h2>Let's get started!</h2>
-         <ExpenseItem
+         <NewExpense onAddExpense={addExpenseHandler} />
+         <Expenses items={expenses} />
+         {/* <ExpenseItem
             title={expenses[0].title}
             amount={expenses[0].amount}
             date={expenses[0].date}
@@ -52,7 +58,7 @@ function App() {
             title={expenses[3].title}
             amount={expenses[3].amount}
             date={expenses[3].date}
-         ></ExpenseItem>
+         ></ExpenseItem> */}
       </div>
    );
 }
