@@ -4,6 +4,7 @@ import Card from '../UI/Card';
 import ExpensesFilter from './ExpensesFilter';
 import './Expenses.css';
 import ExpensesList from './ExpensesList';
+import ExpensesChart from './ExpensesChart';
 
 function Expenses(props) {
    useState(props.items);
@@ -23,43 +24,25 @@ function Expenses(props) {
             selected={filteredYear}
             onChangeFilter={filterChangedHandler}
          />
+         <ExpensesChart expenses={filteredExpenses} />
          <ExpensesList items={filteredExpenses} />
-
       </Card>
    );
 }
 export default Expenses;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/* {filteredExpenses.items.map((expense) => (
+{
+   /* {filteredExpenses.items.map((expense) => (
    <ExpenseItem
       key={expense.id}
       title={expense.title}
       amount={expense.amount}
       date={expense.date}
    />
-))} */}
-{/* <ExpenseItem
+))} */
+}
+{
+   /* <ExpenseItem
    title={props.items[0].title}
    amount={props.items[0].amount}
    date={props.items[0].date}
@@ -78,4 +61,5 @@ export default Expenses;
    title={props.items[3].title}
    amount={props.items[3].amount}
    date={props.items[3].date}
-/> */}
+/> */
+}
